@@ -13,8 +13,6 @@ namespace ConsoleApp18
             menupontok.Add("Terület számítása");
             menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
-            TeruletSzamitas();
-            KeruletSzamitas();
         }
 
         private static void UdvozloKep()
@@ -29,19 +27,22 @@ namespace ConsoleApp18
             Console.WriteLine("Kerület, Nyomd meg az 1-est!");
             Console.SetCursorPosition(35, 2);
             Console.WriteLine("Terület, Nyomd meg az 2-est!");
+            Console.SetCursorPosition(35, 3);
+            Console.WriteLine("Magasságtétel, Nyomd meg az 3-ast!");
         }
 
 
         private static void ValasztasMenubol(List<string> menupontok)
         {
-            switch (Convert.ToInt32(Console.ReadLine())+1)
+            switch (Convert.ToInt32(Console.ReadLine()))
             {
-                case 0:
+                case 1:
                     KeruletSzamitas();
                     break;
-                case 1:
+                case 2:
                     TeruletSzamitas();
                     break;
+                
 
             }
         }
