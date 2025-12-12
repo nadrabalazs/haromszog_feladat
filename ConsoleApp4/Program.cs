@@ -5,16 +5,24 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-            ValasztasMenubol();
-            TeruletSzamitas();
-            KeruletSzamitas();
+
             UdvozloKep();
+            Magassagtetel();
             List<string> menupontok = new List<string>();
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
             menupontok.Add("Kilépés");
             ListazMenu(menupontok);
             Console.WriteLine("Vége!");
+        }
+
+        private static void Magassagtetel()
+        {
+            Console.WriteLine("Adja meg a háromszög területét és az egyik oldalát:");
+            double oldal = Convert.ToDouble(Console.ReadLine());
+            double T = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine((T * 2) / oldal);
+
         }
 
         private static void UdvozloKep()
@@ -28,39 +36,7 @@ namespace ConsoleApp18
 
         }
 
-
-        private static void ValasztasMenubol()
-        {
-            ConsoleKeyInfo i = Console.ReadKey();
-            switch (menupontok.Count)
-            {
-
-                case 0:
-                    KeruletSzamitas();
-                    break;
-                case 1:
-                    TeruletSzamitas();
-                    break;
-
-            }
-        }
-
-        private static void KeruletSzamitas()
-        {
-            Console.Clear();
-            Console.WriteLine("Add meg a három oldal hosszát:");
-            double a = Convert.ToDouble(Console.ReadLine());
-            double b = Convert.ToDouble(Console.ReadLine());
-            double c = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Kerület: {a + b + c}");
-        }
-        private static void TeruletSzamitas()
-        {
-            Console.Clear();
-            Console.WriteLine("Add meg egy alap hosszát és a háromszög magasságát:");
-            double a = Convert.ToDouble(Console.ReadLine());
-            double ma = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine((a*ma)/2);
-        }
     }
+
+
 }
