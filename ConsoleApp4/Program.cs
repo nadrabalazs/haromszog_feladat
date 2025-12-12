@@ -5,16 +5,16 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-            ValasztasMenubol();
-            TeruletSzamitas();
-            KeruletSzamitas();
             UdvozloKep();
             List<string> menupontok = new List<string>();
+            ListazMenu(menupontok);
+            ValasztasMenubol(menupontok);
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
             menupontok.Add("Kilépés");
-            ListazMenu(menupontok);
             Console.WriteLine("Vége!");
+            TeruletSzamitas();
+            KeruletSzamitas();
         }
 
         private static void UdvozloKep()
@@ -25,16 +25,17 @@ namespace ConsoleApp18
         }
         private static void ListazMenu(List<string> menupontok)
         {
-
+            Console.SetCursorPosition(35, 1);
+            Console.WriteLine("Kerület, Nyomd meg az 1-est!");
+            Console.SetCursorPosition(35, 2);
+            Console.WriteLine("Terület, Nyomd meg az 2-est!");
         }
 
 
-        private static void ValasztasMenubol()
+        private static void ValasztasMenubol(List<string> menupontok)
         {
-            ConsoleKeyInfo i = Console.ReadKey();
-            switch (menupontok.Count)
+            switch (Convert.ToInt32(Console.ReadLine())+1)
             {
-
                 case 0:
                     KeruletSzamitas();
                     break;
@@ -60,7 +61,7 @@ namespace ConsoleApp18
             Console.WriteLine("Add meg egy alap hosszát és a háromszög magasságát:");
             double a = Convert.ToDouble(Console.ReadLine());
             double ma = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine((a*ma)/2);
+            Console.WriteLine($"Terület: {(a * ma) / 2}");
         }
     }
 }
