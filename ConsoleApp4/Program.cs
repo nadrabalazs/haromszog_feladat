@@ -5,14 +5,9 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-
             UdvozloKep();
-            Magassagtetel();
-            List<string> menupontok = new List<string>();
-            menupontok.Add("Kerület számítása");
-            menupontok.Add("Terület számítása");
-            menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
+            Magassagtetel();
         }
 
         private static void Magassagtetel()
