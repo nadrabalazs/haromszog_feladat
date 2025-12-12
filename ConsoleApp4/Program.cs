@@ -5,22 +5,25 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-            UdvozloKep();
+            ValasztasMenubol();
+            TeruletSzamitas();
             List<string> menupontok = new List<string>();
             ListazMenu(menupontok);
             ValasztasMenubol(menupontok);
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
             menupontok.Add("Kilépés");
+            Pitagorasz();
+
             Console.WriteLine("Vége!");
         }
+
+        
 
         private static void UdvozloKep()
         {
             Console.Clear();
             Console.SetCursorPosition(30, 0);
-            Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!");
-        }
         private static void ListazMenu(List<string> menupontok)
         {
             Console.SetCursorPosition(35, 1);
@@ -33,7 +36,16 @@ namespace ConsoleApp18
 
 
         private static void ValasztasMenubol(List<string> menupontok)
-        {
+        
+        
+        private static void Pitagorasz()
+
+            Console.WriteLine("Add meg az a négyzetét és b Négyzetét: ");
+            double aNegyzet = Convert.ToDouble(Console.ReadLine());
+            double bNegyzet = Convert.ToDouble(Console.ReadLine());
+            double cNegyzet = Convert.ToDouble(Math.Sqrt(Math.Pow(aNegyzet,2))+Math.Pow(bNegyzet,2));
+            Console.WriteLine($"C oldal = {cNegyzet}");
+            throw new NotImplementedException();
             switch (Convert.ToInt32(Console.ReadLine()))
             {
                 case 1:
@@ -63,6 +75,10 @@ namespace ConsoleApp18
             double a = Convert.ToDouble(Console.ReadLine());
             double ma = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Terület: {(a * ma) / 2}");
+            Console.WriteLine((a*ma)/2);
+            Console.WriteLine((a*ma)/2);
+            double ma = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine((a*ma)/2);
         }
     }
 }
