@@ -12,7 +12,6 @@ namespace ConsoleApp18
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
             menupontok.Add("Kilépés");
-            ListazMenu(menupontok);
             Console.WriteLine("Vége!");
         }
 
@@ -31,10 +30,7 @@ namespace ConsoleApp18
             Console.SetCursorPosition(30, 0);
             Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!");
         }
-        private static void ListazMenu(List<string> menupontok)
-        {
-
-        }
+     
 
     }
 
