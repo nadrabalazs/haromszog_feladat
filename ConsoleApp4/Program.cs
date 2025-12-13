@@ -11,6 +11,7 @@ namespace ConsoleApp18
             ValasztasMenubol(menupontok);
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
+            menupontok.Add("Pitagorasz tétel");
             menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
         }
