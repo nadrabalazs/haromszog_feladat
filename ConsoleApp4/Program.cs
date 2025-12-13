@@ -17,35 +17,36 @@ namespace ConsoleApp18
             menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
         }
-
         private static void ListazMenu(List<string> menupontok)
         {
-            Console.SetCursorPosition(35, 1);
+            Console.SetCursorPosition(50, 2);
             Console.WriteLine("Kerület(F1)");
-            Console.SetCursorPosition(35, 2);
+            Console.SetCursorPosition(50, 3);
             Console.WriteLine("Terület(F2)");
-            Console.SetCursorPosition(35, 3);
+            Console.SetCursorPosition(50, 4);
             Console.WriteLine("Pitagorasz(F3)");
-            Console.SetCursorPosition(35, 4);
+            Console.SetCursorPosition(50, 5);
             Console.WriteLine("Magasság(F4)");
-            Console.SetCursorPosition(35, 5);
+            Console.SetCursorPosition(50, 6);
             Console.WriteLine("Köré írható kör(F5)");
-            Console.SetCursorPosition(35, 6);
+            Console.SetCursorPosition(50, 7);
             Console.WriteLine("Kilépés(Esc)");
 
+        // TODO: Nádra
         }
 
         private static void UdvozloKep()
         {
             Console.Clear();
             Console.SetCursorPosition(30, 0);
-            Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!");
+            Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!\n");
         }
         private static void Kilepes()
         {
             Console.Clear();
             Console.SetCursorPosition(40,5);
             Console.WriteLine("Viszont látásra!");
+        // TODO: Nádra
         }
         private static void ValasztasMenubol(List<string> menupontok)
         {
@@ -70,9 +71,9 @@ namespace ConsoleApp18
                 case ConsoleKey.Escape:
                     Kilepes();
                     break;
+        // TODO: Nádra
             }
         }
-
         private static void KoreIrtKor()
         {
             Console.Clear();
@@ -82,8 +83,8 @@ namespace ConsoleApp18
             double c =Convert.ToDouble (Console.ReadLine());
             double Ter =Convert.ToDouble (Console.ReadLine());
             Console.WriteLine($"A háromszög köré írható kör sugara: {(a+b+c)/4*Ter}");
+        // TODO: Illés
         }
-
         private static void MagassagTetel()
         {
             Console.Clear();
@@ -93,8 +94,8 @@ namespace ConsoleApp18
             double oldal = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Az oldalhoz tartozó magasság:{(T * 2) / oldal} ");
 
+        // TODO: Illés
         }
-
         private static void KeruletSzamitas()
         {
             Console.Clear();
@@ -103,6 +104,7 @@ namespace ConsoleApp18
             double b = Convert.ToDouble(Console.ReadLine());
             double c = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Kerület: {a + b + c}");
+        // TODO: Nádra
         }
         private static void TeruletSzamitas()
         {
@@ -111,6 +113,7 @@ namespace ConsoleApp18
             double a = Convert.ToDouble(Console.ReadLine());
             double ma = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Terület: {(a * ma) / 2}");
+        // TODO: Nádra
         }
         private static void Pitagorasz() 
         {
@@ -120,5 +123,6 @@ namespace ConsoleApp18
             double bNegyzet = Convert.ToDouble(Console.ReadLine());
             double cNegyzet = Convert.ToDouble(Math.Sqrt((Math.Pow(aNegyzet, 2)) + Math.Pow(bNegyzet, 2)));
             Console.WriteLine($"C oldal = {cNegyzet}");    }
+        // TODO: Simon
 }
 }
