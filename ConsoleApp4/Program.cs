@@ -5,8 +5,7 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-            UdvozloKep();
-            Console.WriteLine("Vége!");
+         Console.WriteLine("Vége!");
             Magassagtetel();
             koreirtkor();
         }
@@ -29,15 +28,6 @@ namespace ConsoleApp18
             Console.WriteLine($"Az oldalhoz tartozó magasság:{(T * 2) / oldal} ");
 
         }
-
-        private static void UdvozloKep()
-        {
-            Console.Clear();
-            Console.SetCursorPosition(30, 0);
-            Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!");
-        }
-     
-
     }
 
 
