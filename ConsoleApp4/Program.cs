@@ -31,7 +31,7 @@ namespace ConsoleApp18
                 }
 
             }
-            // TODO: Nádra
+            // TODO: Nádra ListazMenu
         }
 
         private static void UdvozloKep()
@@ -45,7 +45,7 @@ namespace ConsoleApp18
             Console.Clear();
             Console.SetCursorPosition(40,5);
             Console.WriteLine("Viszont látásra!");
-        // TODO: Nádra
+            // TODO: Nádra Kilepes
         }
         private static void ValasztasMenubol(List<string> menupontok)
         {
@@ -70,7 +70,7 @@ namespace ConsoleApp18
                 case ConsoleKey.Escape:
                     Kilepes();
                     break;
-        // TODO: Nádra
+                // TODO: Nádra ValasztasMenubol
             }
         }
         private static void KoreIrtKor()
@@ -88,7 +88,7 @@ namespace ConsoleApp18
             double c =Convert.ToDouble (Console.ReadLine());
             double Ter =Convert.ToDouble (Console.ReadLine());
             Console.WriteLine($"A háromszög köré írható kör sugara: {(a+b+c)/4*Ter}");
-        // TODO: Illés
+            // TODO: Illés KoreIrtKor
         }
         private static void MagassagTetel()
         {
@@ -105,7 +105,7 @@ namespace ConsoleApp18
             double oldal = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Az oldalhoz tartozó magasság:{(T * 2) / oldal} ");
 
-        // TODO: Illés
+            // TODO: Illés MagassagTetel
         }
         private static void KeruletSzamitas()
         {
@@ -121,7 +121,7 @@ namespace ConsoleApp18
             double b = Convert.ToDouble(Console.ReadLine());
             double c = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Kerület: {a + b + c}");
-        // TODO: Nádra
+            // TODO: Nádra KeruletSzamitas
         }
         private static void TeruletSzamitas()
         {
@@ -136,7 +136,7 @@ namespace ConsoleApp18
             double a = Convert.ToDouble(Console.ReadLine());
             double ma = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Terület: {(a * ma) / 2}");
-        // TODO: Nádra
+            // TODO: Nádra TeruletSzamitas
         }
         private static void Pitagorasz() 
         {
@@ -152,6 +152,6 @@ namespace ConsoleApp18
             double bNegyzet = Convert.ToDouble(Console.ReadLine());
             double cNegyzet = Convert.ToDouble(Math.Sqrt((Math.Pow(aNegyzet, 2)) + Math.Pow(bNegyzet, 2)));
             Console.WriteLine($"C oldal = {cNegyzet}");    }
-        // TODO: Simon
-}
+        // TODO: Simon Pitagorasz
+    }
 }
