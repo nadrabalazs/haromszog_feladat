@@ -7,32 +7,31 @@ namespace ConsoleApp18
         {
             UdvozloKep();
             List<string> menupontok = new List<string>();
+            menupontok.Add("Kerület számítása(F1)");
+            menupontok.Add("Terület számítása(F2)");
+            menupontok.Add("Pitagorasz tétel(F3)");
+            menupontok.Add("Magasság tétel(F4)");
+            menupontok.Add("Köré írható kör sugara(F5)");
+            menupontok.Add("Kilépés(Esc)");
             ListazMenu(menupontok);
             ValasztasMenubol(menupontok);
-            menupontok.Add("Kerület számítása");
-            menupontok.Add("Terület számítása");
-            menupontok.Add("Pitagorasz tétel");
-            menupontok.Add("Magassag tétel");
-            menupontok.Add("Köré írható kör");
-            menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
         }
         private static void ListazMenu(List<string> menupontok)
         {
-            Console.SetCursorPosition(50, 2);
-            Console.WriteLine("Kerület(F1)");
-            Console.SetCursorPosition(50, 3);
-            Console.WriteLine("Terület(F2)");
-            Console.SetCursorPosition(50, 4);
-            Console.WriteLine("Pitagorasz(F3)");
-            Console.SetCursorPosition(50, 5);
-            Console.WriteLine("Magasság(F4)");
-            Console.SetCursorPosition(50, 6);
-            Console.WriteLine("Köré írható kör(F5)");
-            Console.SetCursorPosition(50, 7);
-            Console.WriteLine("Kilépés(Esc)");
+            {
+                Console.WriteLine("Válassz egy menüpontot!");
+                int menuSor = menupontok.Count;
+                foreach (string menuPont in menupontok)
+                {
+                    Console.SetCursorPosition(30, menuSor);
+                    Console.WriteLine(menuPont);
 
-        // TODO: Nádra
+                    menuSor++;
+                }
+
+            }
+            // TODO: Nádra
         }
 
         private static void UdvozloKep()
@@ -77,7 +76,13 @@ namespace ConsoleApp18
         private static void KoreIrtKor()
         {
             Console.Clear();
-            Console.WriteLine("Adja meg a háromszög oldalait és a területét:  ");
+            Console.WriteLine("Kilépéshez nyomja meg az Escape gombot!\nAdja meg a háromszög oldalait és a területét:");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Escape)
+            {
+                Kilepes();
+                return;
+            }
             double a =Convert.ToDouble (Console.ReadLine());
             double b =Convert.ToDouble (Console.ReadLine());
             double c =Convert.ToDouble (Console.ReadLine());
@@ -88,7 +93,13 @@ namespace ConsoleApp18
         private static void MagassagTetel()
         {
             Console.Clear();
-            Console.WriteLine("Adja meg a háromszög területét és az egyik oldalát:");
+            Console.WriteLine("Kilépéshez nyomja meg az Escape gombot!\nAdja meg a háromszög területét és az egyik oldalát:");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Escape)
+            {
+                Kilepes();
+                return;
+            }
             Console.WriteLine("Terület:");
             double T = Convert.ToDouble(Console.ReadLine());
             double oldal = Convert.ToDouble(Console.ReadLine());
@@ -99,7 +110,13 @@ namespace ConsoleApp18
         private static void KeruletSzamitas()
         {
             Console.Clear();
-            Console.WriteLine("Add meg a három oldal hosszát:");
+            Console.WriteLine("Kilépéshez nyomja meg az Escape gombot!\nAdd meg a három oldal hosszát:");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Escape)
+            {
+                Kilepes();
+                return;
+            }
             double a = Convert.ToDouble(Console.ReadLine());
             double b = Convert.ToDouble(Console.ReadLine());
             double c = Convert.ToDouble(Console.ReadLine());
@@ -109,7 +126,13 @@ namespace ConsoleApp18
         private static void TeruletSzamitas()
         {
             Console.Clear();
-            Console.WriteLine("Add meg egy alap hosszát és a háromszög magasságát:");
+            Console.WriteLine("Kilépéshez nyomja meg az Escape gombot!\nAdd meg egy alap hosszát és a háromszög magasságát: ");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Escape)
+            {
+                Kilepes();
+                return;
+            }
             double a = Convert.ToDouble(Console.ReadLine());
             double ma = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Terület: {(a * ma) / 2}");
@@ -118,7 +141,13 @@ namespace ConsoleApp18
         private static void Pitagorasz() 
         {
             Console.Clear();
-            Console.WriteLine("Add meg az a és b oldal hosszát: ");
+            Console.WriteLine("Kilépéshez nyomja meg az Escape gombot!\nAdd meg az a és b oldal hosszát:");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Escape)
+            {
+                Kilepes();
+                return;
+            }
             double aNegyzet = Convert.ToDouble(Console.ReadLine());
             double bNegyzet = Convert.ToDouble(Console.ReadLine());
             double cNegyzet = Convert.ToDouble(Math.Sqrt((Math.Pow(aNegyzet, 2)) + Math.Pow(bNegyzet, 2)));
