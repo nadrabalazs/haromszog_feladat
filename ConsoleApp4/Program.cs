@@ -12,46 +12,89 @@ namespace ConsoleApp18
             menupontok.Add("Kerület számítása");
             menupontok.Add("Terület számítása");
             menupontok.Add("Pitagorasz tétel");
+            menupontok.Add("Magassag tétel");
+            menupontok.Add("Köré írható kör");
             menupontok.Add("Kilépés");
             Console.WriteLine("Vége!");
-         Console.WriteLine("Vége!");
-            Magassagtetel();
-            koreirtkor();
         }
 
-        private static void koreirtkor()
+        private static void ListazMenu(List<string> menupontok)
         {
+            Console.SetCursorPosition(35, 1);
+            Console.WriteLine("Kerület(F1)");
+            Console.SetCursorPosition(35, 2);
+            Console.WriteLine("Terület(F2)");
+            Console.SetCursorPosition(35, 3);
+            Console.WriteLine("Pitagorasz(F3)");
+            Console.SetCursorPosition(35, 4);
+            Console.WriteLine("Magasság(F4)");
+            Console.SetCursorPosition(35, 5);
+            Console.WriteLine("Köré írható kör(F5)");
+            Console.SetCursorPosition(35, 6);
+            Console.WriteLine("Kilépés(Esc)");
+
+        }
+
+        private static void UdvozloKep()
+        {
+            Console.Clear();
+            Console.SetCursorPosition(30, 0);
+            Console.WriteLine("Üdvözlöm a háromszög szuper alkalmazásban!");
+        }
+        private static void Kilepes()
+        {
+            Console.Clear();
+            Console.SetCursorPosition(40,5);
+            Console.WriteLine("Viszont látásra!");
+        }
+        private static void ValasztasMenubol(List<string> menupontok)
+        {
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.F1:
+                    KeruletSzamitas();
+                    break;
+                case ConsoleKey.F2:
+                    TeruletSzamitas();
+                    break;
+                case ConsoleKey.F3:
+                    Pitagorasz();
+                    break;
+                case ConsoleKey.F4:
+                    MagassagTetel();
+                    break;
+                case ConsoleKey.F5: 
+                    KoreIrtKor(); 
+                    break;
+                case ConsoleKey.Escape:
+                    Kilepes();
+                    break;
+            }
+        }
+
+        private static void KoreIrtKor()
+        {
+            Console.Clear();
             Console.WriteLine("Adja meg a háromszög oldalait és a területét:  ");
             double a =Convert.ToDouble (Console.ReadLine());
             double b =Convert.ToDouble (Console.ReadLine());
             double c =Convert.ToDouble (Console.ReadLine());
             double Ter =Convert.ToDouble (Console.ReadLine());
-            Console.WriteLine($"A háromszög köré írt kör sugara: {(a+b+c)/4*Ter}");
+            Console.WriteLine($"A háromszög köré írható kör sugara: {(a+b+c)/4*Ter}");
         }
 
-        private static void Magassagtetel()
+        private static void MagassagTetel()
         {
+            Console.Clear();
             Console.WriteLine("Adja meg a háromszög területét és az egyik oldalát:");
-            double oldal = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Terület:");
             double T = Convert.ToDouble(Console.ReadLine());
+            double oldal = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Az oldalhoz tartozó magasság:{(T * 2) / oldal} ");
-            switch (Convert.ToInt32(Console.ReadLine()))
-            {
-                case 1:
-                    KeruletSzamitas();
-                    break;
-                case 2:
-                    TeruletSzamitas();
-                    break;
-                case 3:
-                    Pitagorasz();
-                    break;
 
         }
-    }
 
-
-}
         private static void KeruletSzamitas()
         {
             Console.Clear();
@@ -70,13 +113,12 @@ namespace ConsoleApp18
             Console.WriteLine($"Terület: {(a * ma) / 2}");
         }
         private static void Pitagorasz() 
-        { 
-            Console.WriteLine("Add meg az a négyzetét és b Négyzetét: ");
+        {
+            Console.Clear();
+            Console.WriteLine("Add meg az a és b oldal hosszát: ");
             double aNegyzet = Convert.ToDouble(Console.ReadLine());
             double bNegyzet = Convert.ToDouble(Console.ReadLine());
-            double cNegyzet = Convert.ToDouble(Math.Sqrt(Math.Pow(aNegyzet, 2)) + Math.Pow(bNegyzet, 2));
-            Console.WriteLine($"C oldal = {cNegyzet}");
-            throw new NotImplementedException();
-    }
+            double cNegyzet = Convert.ToDouble(Math.Sqrt((Math.Pow(aNegyzet, 2)) + Math.Pow(bNegyzet, 2)));
+            Console.WriteLine($"C oldal = {cNegyzet}");    }
 }
 }
